@@ -11,9 +11,10 @@ var def = [49, 63, 83, 123, 43, 58, 78, 111, 78, 65, 80, 100, 120, 35, 55, 50, 3
             60, 70, 30, 65, 44, 69, 40, 55, 50, 85, 90, 110, 120, 52];
 var spd = [65, 80, 100, 120, 50, 65, 85, 85, 115, 64, 80, 105, 115, 20, 25, 80, 20, 25, 80, 80, 35, 50, 70, 80, 35, 35,
             70, 80, 31, 61, 54, 79, 50, 80, 85, 30, 35, 55, 65, 40];
+            
 
+let rand = Math.floor(Math.random()*pokemon.length);
 if (pokemon.length === def.length && pokemon.length === spd.length && pokemon.length === type1.length && pokemon.length === type2. length){
-    let rand = Math.floor(Math.random()*pokemon.length);
     if (type2 [rand] === null){
         document.getElementById("demo").innerHTML = `The pokemon ${pokemon [rand]} is a ${type1 [rand]}-type that has a top defense of ${def [rand]} and a top special defense of ${spd [rand]}.`;
     } else {
@@ -23,5 +24,4 @@ if (pokemon.length === def.length && pokemon.length === spd.length && pokemon.le
     document.getElementById("demo").innerHTML = `Oops! Pokemon: ${pokemon.length} def: ${def.length} spd: ${spd.length}`;
 }
 
-
-
+document.getElementById("image").src = `https://img.pokemondb.net/artwork/${pokemon[rand].toLowerCase()}.jpg`;
